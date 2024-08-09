@@ -2,6 +2,13 @@
 
 Traffic Management Dashboard is a web-based application designed to visualize and manage traffic data in real-time. It provides insights into traffic patterns, congestion levels, and other relevant metrics to aid in traffic management and planning.
 
+## Deployed Application
+
+You can view the live version of the project at the following link:
+
+[Live Application](https://traffic-management-dashboard.vercel.app/)
+
+
 ## Description
 
 This project utilizes HTML, CSS, and JavaScript to create an interactive dashboard that displays traffic-related information. It includes features for viewing live traffic data, analyzing historical trends, and generating reports for decision-making purposes.
