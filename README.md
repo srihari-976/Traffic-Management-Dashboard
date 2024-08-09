@@ -4,7 +4,7 @@ Traffic Management Dashboard is a web-based application designed to visualize an
 
 ## Deployed Application
 
-🚀 **Check out the live version of Farming Companion!** 🚀
+🚀 **Check out the live version of Traffic Managment Dashboard!** 🚀
 
 [![Live Application](https://img.shields.io/badge/Live%20Application-Click%20Here-brightgreen)](https://traffic-management-dashboard.vercel.app/)
 
