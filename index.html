@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Management Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+</head>
+<body>
+    <div class="grid-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="menu-icon" onclick="openSidebar()">
+                <span class="material-icons-outlined">menu</span>
+            </div>
+            <div class="header-left">
+                <span class="material-icons-outlined">search</span>
+            </div>
+            <div class="header-right">
+                <span class="material-icons-outlined">notifications</span>
+                <span class="material-icons-outlined">account_circle</span>
+            </div>
+        </header>
+
+        <!-- Sidebar -->
+        <aside id="sidebar">
+            <div class="sidebar-brand">
+                <span class="material-icons-outlined">traffic</span>
+                Traffic Management
+            </div>
+            <ul class="sidebar-list">
+                <li class="sidebar-list-item active">
+                    <a href="#dashboard">
+                        <span class="material-icons-outlined">grid_view</span> Dashboard
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="#control-centres">
+                        <span class="material-icons-outlined">control_camera</span> Control Centres
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="#categories">
+                        <span class="material-icons-outlined">category</span> Categories
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="#junctions">
+                        <span class="material-icons-outlined">hub</span> Junctions
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="#inventory">
+                        <span class="material-icons-outlined">inventory_2</span> Inventory
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="#reports">
+                        <span class="material-icons-outlined">summarize</span> Reports
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="#settings">
+                        <span class="material-icons-outlined">settings</span> Settings
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main -->
+        <main class="main-container">
+            <!-- Title -->
+            <div class="main-title">
+                <div class="title-section">
+                    <h2>Dashboard</h2>
+                    <p>Traffic monitoring and control system</p>
+                </div>
+                <div class="date-time">
+                    <div id="current-time">12:00:00</div>
+                    <div id="current-date">Monday, March 25, 2024</div>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-overview">
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <span class="stat-title">North Traffic</span>
+                        <span class="material-icons-outlined">north</span>
+                    </div>
+                    <div class="stat-value">1,245</div>
+                    <div class="stat-change positive">
+                        <span class="material-icons-outlined">arrow_upward</span>
+                        +15.3%
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <span class="stat-title">South Traffic</span>
+                        <span class="material-icons-outlined">south</span>
+                    </div>
+                    <div class="stat-value">1,180</div>
+                    <div class="stat-change negative">
+                        <span class="material-icons-outlined">arrow_downward</span>
+                        -5.4%
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <span class="stat-title">East Traffic</span>
+                        <span class="material-icons-outlined">east</span>
+                    </div>
+                    <div class="stat-value">948</div>
+                    <div class="stat-change positive">
+                        <span class="material-icons-outlined">arrow_upward</span>
+                        +8.2%
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <span class="stat-title">West Traffic</span>
+                        <span class="material-icons-outlined">west</span>
+                    </div>
+                    <div class="stat-value">872</div>
+                    <div class="stat-change positive">
+                        <span class="material-icons-outlined">arrow_upward</span>
+                        +2.1%
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts -->
+            <div class="charts">
+                <!-- Traffic Trends Chart -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Traffic Trends</h3>
+                        <div class="chart-actions">
+                            <span class="chart-period active">6M</span>
+                            <span class="chart-period">1Y</span>
+                            <span class="chart-period">ALL</span>
+                        </div>
+                    </div>
+                    <div id="area-chart"></div>
+                </div>
+
+                <!-- Jalahalli Cross Junction Chart -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Jalahalli Cross Junction</h3>
+                        <div class="chart-actions">
+                            <span class="chart-period active">Day</span>
+                            <span class="chart-period">Week</span>
+                            <span class="chart-period">Month</span>
+                        </div>
+                    </div>
+                    <div id="bar-chart"></div>
+                </div>
+            </div>
+
+            <!-- Map and Traffic Light Section -->
+            <div class="charts">
+                <!-- Map View -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Map View</h3>
+                        <div class="chart-actions">
+                            <span class="chart-period active">Live</span>
+                            <span class="chart-period">Traffic</span>
+                            <span class="chart-period">Satellite</span>
+                        </div>
+                    </div>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3589.1489875954176!2d77.51578623371223!3d13.038273173414854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3d27a9d7c5ab%3A0xa6dcd07a66a7faf!2sJalahalli%20Cross%20Rd%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1711188445918!5m2!1sen!2sin" 
+                            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <!-- Traffic Light Status -->
+                <div class="chart-card traffic-status-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Traffic Light Status</h3>
+                        <div class="chart-actions">
+                            <span class="chart-period active">Auto</span>
+                            <span class="chart-period">Manual</span>
+                        </div>
+                    </div>
+                    <div class="traffic-light-container">
+                        <div class="traffic-light">
+                            <div class="sig red"></div>
+                            <div class="sig yellow"></div>
+                            <div class="sig green"></div>
+                        </div>
+                        <div class="traffic-light-info">
+                            <div class="timer">
+                                <span id="countdown">30</span>
+                                <span class="timer-label">seconds</span>
+                            </div>
+                            <div class="status">
+                                Current Signal: <span id="light-status">Red</span>
+                            </div>
+                            <div class="traffic-stats">
+                                <div class="traffic-stat-item">
+                                    <span class="stat-label">Queue Length</span>
+                                    <span class="stat-value">15 vehicles</span>
+                                </div>
+                                <div class="traffic-stat-item">
+                                    <span class="stat-label">Wait Time</span>
+                                    <span class="stat-value">45 seconds</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html> 
